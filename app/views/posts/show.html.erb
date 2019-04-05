@@ -4,7 +4,7 @@
 
 <% form_for @comment do |f| %>
   <%= f.text_field :content %>
-  <%= f.collection_select :users %>
+  <%= f.collection_select :user, :id, User.all %>
 <% end %>
 
 <% @post.comments.each do |c| %>
