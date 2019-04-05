@@ -2,12 +2,12 @@
 <%= @post.title %>
 <%= @post.content %>
 
-<% @post.comments.each do |c| %>
-  <%= c.content %>
-  <%= c.user.name %>
-<% end %>
-
 <% form_for @comment do |f| %>
   <%= f.text_field :content %>
   <%= f.collection_select :users %>
+<% end %>
+
+<% @post.comments.each do |c| %>
+  <%= c.content %>
+  <%= c.user.name %>
 <% end %>
